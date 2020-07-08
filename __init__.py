@@ -18,11 +18,17 @@
     :copyright: (c) 2020, Mikko Niemelä a.k.a. Lord Mike (lordmike@iki.fi)
     :license: MIT License
 """
+
 import logging
+import io
+from pathlib import Path
+import hashlib
+from tqdm import tqdm
 
 __license__ = "MIT License"
-__version__ = "0.0.1"
+__version__ = "0.0.2"
 __revision__ = "LMToyBoxPython (module)  v" + __version__ + " (2020-07-08)"
+
 
 def create_logger():
     # https://www.toptal.com/python/in-depth-python-logging
@@ -35,3 +41,33 @@ logger = create_logger()
 
 def logging_test():
     logger.debug('LMToyBoxPython module logging test.')
+
+
+def sha256(src: str, length: int=io.DEFAULT_BUFFER_SIZE, callback=None,
+           show_progress: bool=False) -> str:
+    '''
+    Calculate sha256
+
+    based on md5sum(...) -function
+    https://docs.python.org/2/library/hashlib.html
+    '''
+    logger.debug('Calculate sha256 sum for file: ' + str(src))
+    file_len = Path(src).stat().st_size
+    pbar = None
+    if show_progress:
+        pbar = tqdm(total=file_len)
+    calculated = 0
+    md5 = hashlib.sha256()
+    with io.open(src, mode="rb") as fd:
+        for chunk in iter(lambda: fd.read(length), b''):
+            md5.update(chunk)
+            if not callback is None:
+                calculated += len(chunk)
+                callback(calculated, file_len)
+            elif pbar:
+                pbar.update(len(chunk))
+
+    if pbar:
+        pbar.close()
+
+    return md5.hexdigest()

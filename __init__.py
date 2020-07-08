@@ -32,3 +32,6 @@ def create_logger():
     return log
 
 logger = create_logger()
+
+def logging_test():
+    logger.debug('LMToyBoxPython module logging test.')

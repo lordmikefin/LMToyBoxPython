@@ -26,8 +26,8 @@ import hashlib
 from tqdm import tqdm
 
 __license__ = "MIT License"
-__version__ = "0.0.2"
-__revision__ = "LMToyBoxPython (module)  v" + __version__ + " (2020-07-08)"
+__version__ = "0.0.3"
+__revision__ = "LMToyBoxPython (module)  v" + __version__ + " (2020-07-09)"
 
 
 def create_logger():

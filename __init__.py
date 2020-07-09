@@ -71,3 +71,17 @@ def sha256(src: str, length: int=io.DEFAULT_BUFFER_SIZE, callback=None,
         pbar.close()
 
     return md5.hexdigest()
+
+
+def write_lines_to_file(file: str, lines: list, mode='w'):
+    """
+    Available modes:
+    'w' open for writing, truncating the file first
+    'x' open for exclusive creation, failing if the file already exists
+    'a' open for writing, appending to the end of the file if it exists
+
+    Read mode:
+    https://docs.python.org/3/library/functions.html#open
+    """
+    with open(file, mode) as f:
+        f.writelines(lines)

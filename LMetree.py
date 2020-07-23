@@ -2,9 +2,9 @@
 '''
 Created on 23 Jul 2020
 
-@author: Mikko Niemel�
+@author: Mikko Niemelä
 
-:copyright: (c) 2020, Mikko Niemel� a.k.a. Lord Mike (lordmike@iki.fi)
+:copyright: (c) 2020, Mikko Niemelä a.k.a. Lord Mike (lordmike@iki.fi)
 :license: MIT License
 '''
 

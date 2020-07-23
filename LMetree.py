@@ -1,9 +1,10 @@
+# -*- coding: UTF-8 -*-
 '''
 Created on 23 Jul 2020
 
-@author: Mikko Niemelä
+@author: Mikko Niemelï¿½
 
-:copyright: (c) 2020, Mikko Niemelä a.k.a. Lord Mike (lordmike@iki.fi)
+:copyright: (c) 2020, Mikko Niemelï¿½ a.k.a. Lord Mike (lordmike@iki.fi)
 :license: MIT License
 '''
 

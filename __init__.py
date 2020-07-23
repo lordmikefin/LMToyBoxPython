@@ -24,6 +24,7 @@ import io
 from pathlib import Path
 import hashlib
 from tqdm import tqdm
+from xml.etree.ElementTree import Element
 
 __license__ = "MIT License"
 __version__ = "0.0.4"
@@ -87,7 +88,7 @@ def write_lines_to_file(file: str, lines: list, mode='w'):
         f.writelines(lines)
 
 
-def indent(elem, level=0):
+def indent(elem: Element, level=0):
     ''' Indent the xml tree '''
     # TODO: this should be part of 'xml.etree.ElementTree'
     # TODO: Send request to ElementTree toolkit project. Python core project?

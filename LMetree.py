@@ -8,7 +8,14 @@ Created on 23 Jul 2020
 :license: MIT License
 '''
 
-from xml.etree.ElementTree import Element
+from xml.etree.ElementTree import Element, SubElement
+
+
+def create_subelem(elem: Element, tag_name: str=None, text: str=None):
+    if not text:
+        return  # do not create empty element
+    elem = SubElement(elem, tag_name)
+    elem.text = text
 
 
 def indent(elem: Element, level=0):

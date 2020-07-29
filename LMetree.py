@@ -11,10 +11,10 @@ Created on 23 Jul 2020
 from xml.etree.ElementTree import Element, SubElement
 
 
-def create_subelem(elem: Element, tag_name: str=None, text: str=None):
+def create_subelem(parent: Element, tag_name: str=None, text: str=None):
     if not text:
         return  # do not create empty element
-    elem = SubElement(elem, tag_name)
+    elem = SubElement(parent, tag_name)
     elem.text = text
 
 

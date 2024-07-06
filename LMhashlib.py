@@ -55,7 +55,11 @@ def _hash_core(src: str, length: int=io.DEFAULT_BUFFER_SIZE, callback=None,
     if hasher is None:
         raise Exception('"hasher" parameter must be defined')
 
-    file_len = Path(src).stat().st_size
+    file = Path(src)
+    if not file.is_file():
+        return ''  # NOTE: Return empty string on error !!!
+
+    file_len = file.stat().st_size
     pbar = None
     if show_progress:
         pbar = tqdm(total=file_len)

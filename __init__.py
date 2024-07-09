@@ -22,7 +22,7 @@
 import logging
 
 __license__ = "MIT License"
-__version__ = "0.0.9"
+__version__ = "0.0.10"
 __revision__ = "LMToyBoxPython (module)  v" + __version__ + " (2020-07-29)"
 
 
